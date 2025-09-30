@@ -1,5 +1,5 @@
 // Brewventy Coffee Shop Theme Utilities ☕
-(function() {
+(function () {
   'use strict';
 
   function getSystemCoffeePreference() {
@@ -23,18 +23,32 @@
     html.setAttribute('data-theme', newFlavor);
     localStorage.setItem('coffee-flavor', newFlavor);
 
+    // Update aria-label
     const toggle = document.querySelector('[data-theme-toggle]');
     if (toggle) {
       const flavorName = newFlavor === 'mocha' ? 'Mocha (Dark)' : 'Latte (Light)';
       toggle.setAttribute('aria-label', `Switch to ${flavorName} coffee theme`);
     }
+
+    console.log('Theme switched to:', newFlavor);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCoffeeShop);
-  } else {
-    initCoffeeShop();
-  }
+  // Initialize theme on page load
+  initCoffeeShop();
+
+  // Connect button click event
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('[data-theme-toggle]');
+    if (toggle) {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleCoffeeFlavor();
+      });
+      console.log('☕ Theme toggle connected successfully!');
+    } else {
+      console.log('❌ Theme toggle button not found!');
+    }
+  });
 
   // Export for global use
   window.brewventy = {
@@ -42,5 +56,5 @@
     getCurrentFlavor: () => document.documentElement.getAttribute('data-theme')
   };
 
-  console.log('☕ Welcome to Brewventy - The perfect brew of design and functionality!');
+  console.log('☕ Brewventy theme system loaded!');
 })();

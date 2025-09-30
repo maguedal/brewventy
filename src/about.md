@@ -58,7 +58,7 @@ Brewventy consistently delivers excellent performance:
 ## ☕ Ready to Start Brewing?
 
 <div class="btn-group mt-xl">
-  <a href="https://github.com/yourusername/eleventy-brewventy-theme" class="btn btn--primary">☕ Download Brewventy</a>
+  <a href="https://github.com/kylereddoch/brewventy" class="btn btn--primary">☕ Download Brewventy</a>
   <a href="/blog/" class="btn btn--secondary">📖 Read Coffee Stories</a>
 </div>
 

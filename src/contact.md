@@ -10,8 +10,8 @@ Have questions about Brewventy? Want to share your coffee-powered website? We'd 
 
 ### 📧 Contact Information
 
-- **Email**: barista@brewventy.com
-- **GitHub**: [Brewventy Theme](https://github.com/yourusername/eleventy-brewventy-theme)
+- **Email**: brewventytheme@proton.me
+- **GitHub**: [Brewventy Theme](https://github.com/kylereddoch/brewventy)
 - **Coffee Hours**: Always brewing! ☕
 
 ### 💌 Send Us a Message

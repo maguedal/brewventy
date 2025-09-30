@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="coffee-shop">
-  <a href="#main" class="skip-link">Skip to main content</a>
+ <!--<a href="#main" class="skip-link">Skip to main content</a>-->
 
   {% include "partials/header.njk" %}
 
@@ -40,45 +40,9 @@
   </main>
 
   {% include "partials/footer.njk" %}
-
-  <!-- Coffee theme switching -->
-  <script>
-    (function() {
-      const html = document.documentElement;
-      const storedFlavor = localStorage.getItem('coffee-flavor');
-      const defaultFlavor = html.getAttribute('data-theme') || 'mocha';
-
-      const currentFlavor = storedFlavor || defaultFlavor;
-      html.setAttribute('data-theme', currentFlavor);
-
-      function toggleCoffeeFlavor() {
-        const current = html.getAttribute('data-theme');
-        const newFlavor = current === 'mocha' ? 'latte' : 'mocha';
-
-        html.setAttribute('data-theme', newFlavor);
-        localStorage.setItem('coffee-flavor', newFlavor);
-
-        const toggle = document.querySelector('[data-theme-toggle]');
-        if (toggle) {
-          const flavorName = newFlavor === 'mocha' ? 'Mocha (Dark)' : 'Latte (Light)';
-          toggle.setAttribute('aria-label', `Switch to ${flavorName} theme`);
-        }
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        const toggle = document.querySelector('[data-theme-toggle]');
-        if (toggle) {
-          toggle.addEventListener('click', toggleCoffeeFlavor);
-
-          const currentFlavor = html.getAttribute('data-theme');
-          const otherFlavor = currentFlavor === 'mocha' ? 'Latte (Light)' : 'Mocha (Dark)';
-          toggle.setAttribute('aria-label', `Switch to ${otherFlavor} theme`);
-        }
-      });
-    })();
-  </script>
   
   <!-- Mobile navigation -->
 <script src="/assets/js/mobile-navigation.js"></script>
+<script src="/assets/js/coffee-theme.js"></script>
 </body>
 </html>

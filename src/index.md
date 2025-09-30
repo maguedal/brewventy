@@ -106,9 +106,5 @@ Ideal for bright morning productivity with clean, creamy colors and high contras
 
 <div class="btn-group btn-group--center mt-xl">
   <a href="/blog/" class="btn btn--primary">☕ Explore All Stories</a>
-  <a href="https://github.com/yourusername/eleventy-brewventy-theme" class="btn btn--ghost">📦 View on GitHub</a>
+  <a href="hhttps://github.com/kylereddoch/brewventy" class="btn btn--ghost">📦 View on GitHub</a>
 </div>
-
----
-
-**Brewed with ❤️ for the Eleventy community** ☕

@@ -1,5 +1,5 @@
 {
-  "name": "eleventy-brewventy-theme",
+  "name": "brewventy",
   "version": "1.0.0",
   "description": "Brewventy - The perfect brew of design and functionality. A beautiful Eleventy starter theme featuring Catppuccin Mocha and Latte color schemes with seamless theme switching.",
   "main": "index.js",
@@ -14,7 +14,9 @@
     "start": "eleventy --serve",
     "build:sass": "sass src/styles/main.scss:_site/css/main.css --style=compressed",
     "watch:sass": "sass src/styles/main.scss:_site/css/main.css --watch",
-    "dev": "npm-run-all --parallel watch:sass start"
+    "dev": "npm-run-all --parallel watch:sass start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d _site"
   },
   "keywords": [
     "eleventy",
@@ -32,11 +34,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/eleventy-brewventy-theme.git"
+    "url": "https://github.com/yourusername/brewventy.git"
   },
-  "homepage": "https://github.com/yourusername/eleventy-brewventy-theme#readme",
+  "homepage": "https://github.com/yourusername/brewventy#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/eleventy-brewventy-theme/issues"
+    "url": "https://github.com/yourusername/brewventy/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

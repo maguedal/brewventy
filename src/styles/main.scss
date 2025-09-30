@@ -41,8 +41,6 @@
 
 @import "components/blog-card-fixes";
 
-@import "components/mobile-navigation.scss";
-
 /* Enhanced Coffee Shop Components */
 
 // Enhanced tags with active state
@@ -99,6 +97,16 @@
             filter: brightness(1.1);
         }
     }
+}
+
+pre .tag,
+code .tag {
+    all: unset; // Remove every inherited style
+    display: inline; // Revert to default inline behavior
+    background: none; // Clear backgrounds
+    color: inherit; // Use surrounding text color
+    padding: 0; // Remove padding
+    font: inherit; // Reset font properties
 }
 
 // Enhanced button groups with better spacing
