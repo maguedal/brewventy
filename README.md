@@ -1,6 +1,6 @@
 # Brewventy Eleventy Starter
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/brewventy?style=for-the-badge)](https://github.com/your-username/brewventy/stargazers)  [![Mastodon Follow](https://img.shields.io/mastodon/follow/yourmastodon_handle?domain=https%3A%2F%2Fmastodon.social&style=for-the-badge)](https://mastodon.social/@yourmastodon_handle)  [![Built with Eleventy](https://img.shields.io/badge/Built%20with-Eleventy-05122A?logo=eleventy?style=for-the-badge)](https://www.11ty.dev)  [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com/your-username/brewventy/pulls)
+[![GitHub stars](https://img.shields.io/github/stars/kylereddoch/brewventy?style=for-the-badge)](https://github.com/kylereddoch/brewventy/stargazers)  [![Mastodon Follow](https://img.shields.io/mastodon/follow/yourmastodon_handle?domain=https%3A%2F%2Fmastodon.social&style=for-the-badge)](https://mastodon.social/@yourmastodon_handle)  [![Built with Eleventy](https://img.shields.io/badge/Built%20with-Eleventy-05122A?logo=eleventy)](https://www.11ty.dev)  [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com/your-username/brewventy/pulls)
 
 A coffee-themed, fully customizable Eleventy starter project combining **elegant design** with **powerful functionality**. Perfect for personal blogs, documentation sites, and landing pages.
 
