@@ -1,11 +1,11 @@
 {
   "title": "Brewventy",
   "description": "The perfect brew of design and functionality. A beautiful Eleventy starter theme featuring Catppuccin Mocha and Latte color schemes.",
-  "url": "https://your-site.com",
+  "url": "https://brewventy.vercel.app",
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com",
-    "url": "https://your-website.com"
+    "name": "Brewventy Theme",
+    "email": "brewventytheme@proton.me",
+    "url": "https://brewventy.vercel.app"
   },
   "theme": "mocha",
   "themes": {
@@ -19,8 +19,8 @@
     }
   },
   "social": {
-    "github": "https://github.com/yourusername/eleventy-brewventy-theme",
-    "twitter": "@yourusername"
+    "github": "https://github.com/kylereddoch/eleventy-brewventy-theme",
+    "mastodon": "https://infosec.exchange/@cyberseckyle",
   },
   "coffee": {
     "tagline": "The perfect brew of design and functionality",

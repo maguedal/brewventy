@@ -34,11 +34,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/brewventy.git"
+    "url": "https://github.com/kylereddoch/brewventy.git"
   },
-  "homepage": "https://github.com/yourusername/brewventy#readme",
+  "homepage": "https://github.com/kylereddoch/brewventy#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/brewventy/issues"
+    "url": "https://github.com/kylereddoch/brewventy/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
