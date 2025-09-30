@@ -1,6 +1,6 @@
 # Brewventy Eleventy Starter
 
-[![GitHub stars](https://img.shields.io/github/kylereddoch/brewventy?style=flat-square&logo=github&logoColor=white&label=GitHub%20stars)](https://github.com/kylereddoch/brewventy/stargazers)  ![Mastodon Follow](https://img.shields.io/mastodon/follow/114614907486620795?domain=infosec.exchange&style=for-the-badge&logo=mastodon&logoColor=white&labelColor=%232F0C7A&color=brightgreen&link=https%3A%2F%2Finfosec.exchange%2F%40cyberseckyle)  [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com/kylereddoch/brewventy/pulls)
+![GitHub Repo stars](https://img.shields.io/github/stars/kylereddoch/brewventy?style=for-the-badge&logo=github&logoColor=white&link=https%3A%2F%2Fgithub.com%2Fkylereddoch%2Fbrewventy%2Fstargazers)  ![Mastodon Follow](https://img.shields.io/mastodon/follow/114614907486620795?domain=infosec.exchange&style=for-the-badge&logo=mastodon&logoColor=white&labelColor=%232F0C7A&color=brightgreen&link=https%3A%2F%2Finfosec.exchange%2F%40cyberseckyle)  [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge)](https://github.com/kylereddoch/brewventy/pulls)
 
 A coffee-themed, fully customizable Eleventy starter project combining **elegant design** with **powerful functionality**. Perfect for personal blogs, documentation sites, and landing pages.
 

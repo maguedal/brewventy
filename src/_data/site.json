@@ -19,8 +19,8 @@
     }
   },
   "social": {
-    "github": "https://github.com/kylereddoch/eleventy-brewventy-theme",
-    "mastodon": "https://infosec.exchange/@cyberseckyle",
+    "github": "https://github.com/kylereddoch/brewventy",
+    "mastodon": "https://infosec.exchange/@cyberseckyle"
   },
   "coffee": {
     "tagline": "The perfect brew of design and functionality",
