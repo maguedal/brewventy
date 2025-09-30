@@ -1,0 +1,313 @@
+/* Blog Page Card Spacing & Style Fixes */
+
+/* ====================================
+   BLOG PAGE CARD SPACING FIXES
+   ==================================== */
+
+/* Match homepage optimized spacing */
+.blog-section .post-grid {
+  display: grid;
+  gap: var(--spacing-base);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  
+  /* Mobile: Single column, tight spacing */
+  grid-template-columns: 1fr;
+  
+  /* Small tablets: 2 columns, better spacing */
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  /* Large tablets: Better spacing */
+  @media (min-width: 768px) {
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+  
+  /* Desktop: 3 columns, optimized spacing */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  /* Large desktop: Better spacing */
+  @media (min-width: 1280px) {
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+  }
+  
+  /* Extra large: 4 columns for very wide screens */
+  @media (min-width: 1536px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Blog page cards match homepage density */
+.blog-section .post-card {
+  padding: var(--spacing-base);
+  
+  @media (min-width: 640px) {
+    padding: var(--spacing-lg);
+  }
+  
+  @media (min-width: 768px) {
+    padding: var(--spacing-lg);  /* Not xl - keep tighter */
+  }
+  
+  @media (min-width: 1024px) {
+    padding: var(--spacing-base);  /* Tight for 3-column layout */
+  }
+  
+  @media (min-width: 1280px) {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* ====================================
+   TAG SPACING & HOVER FIXES
+   ==================================== */
+
+/* Fix first tag margin */
+.post-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  @media (min-width: 640px) {
+    gap: var(--spacing-sm);
+  }
+  
+  /* First tag gets different margin */
+  li:first-child {
+    margin-left: 0;
+    
+    .post-card__tag {
+      margin-left: 0;
+    }
+  }
+  
+  /* Other tags get consistent spacing */
+  li:not(:first-child) {
+    margin-left: var(--spacing-xs);
+    
+    @media (min-width: 640px) {
+      margin-left: var(--spacing-sm);
+    }
+  }
+}
+
+/* Fix tag hover colors - keep readable on blue background */
+.post-card__tag {
+  background-color: var(--color-primary);
+  color: var(--color-bg);  /* Light text on dark background */
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition);
+  white-space: nowrap;
+  
+  font-size: var(--font-size-xs);
+  padding: calc(var(--spacing-xs) / 2) var(--spacing-xs);
+  
+  @media (min-width: 640px) {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  &:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg);  /* Keep light text - don't change to dark */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+}
+
+/* ====================================
+   READ MORE BUTTON STYLING
+   ==================================== */
+
+/* Make read more links into buttons for non-featured cards */
+.post-card:not(.post-card--featured) .post-card__read-more {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-bg);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  display: inline-block;
+  transition: var(--transition);
+  font-size: var(--font-size-xs);
+  
+  @media (min-width: 640px) {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-base);
+  }
+  
+  &:hover {
+    background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+}
+
+/* ====================================
+   FEATURED CARD TAG FIXES
+   ==================================== */
+
+/* Featured card tags should match regular card tags */
+.post-card--featured .post-card__tag {
+  /* Remove the special featured tag styling - use regular tag style */
+  background-color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  
+  &:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg);  /* Keep consistent with regular tags */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+}
+
+/* Remove any special featured tag overrides */
+.post-card--featured .post-card__tags {
+  /* Use same spacing as regular cards */
+  gap: var(--spacing-xs);
+  
+  @media (min-width: 640px) {
+    gap: var(--spacing-sm);
+  }
+  
+  li:first-child {
+    margin-left: 0;
+  }
+  
+  li:not(:first-child) {
+    margin-left: var(--spacing-xs);
+    
+    @media (min-width: 640px) {
+      margin-left: var(--spacing-sm);
+    }
+  }
+}
+
+/* ====================================
+   CARD FOOTER SPACING IMPROVEMENTS
+   ==================================== */
+
+.post-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+  
+  @media (min-width: 640px) {
+    margin-top: var(--spacing-base);
+    padding-top: var(--spacing-base);
+  }
+  
+  /* On mobile, stack vertically for better space usage */
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+}
+
+.post-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  width: 100%;
+  
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ====================================
+   RESPONSIVE CARD IMPROVEMENTS
+   ==================================== */
+
+/* Better mobile card spacing */
+@media (max-width: 640px) {
+  .blog-section .post-grid {
+    gap: var(--spacing-base);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .blog-section .post-card {
+    padding: var(--spacing-base);
+  }
+  
+  .post-card__header {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .post-card__body {
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+/* Better tablet card spacing */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .blog-section .post-grid {
+    gap: var(--spacing-lg);
+  }
+  
+  .blog-section .post-card {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Better desktop card spacing */
+@media (min-width: 1024px) {
+  .blog-section .post-grid {
+    gap: var(--spacing-lg);
+  }
+  
+  .blog-section .post-card {
+    padding: var(--spacing-base);
+  }
+  
+  /* Featured card gets more padding on desktop */
+  .blog-section .post-card--featured {
+    padding: var(--spacing-xl);
+  }
+}
+
+/* ====================================
+   DARK THEME ADJUSTMENTS
+   ==================================== */
+
+[data-theme="dark"] {
+  .post-card__tag {
+    background-color: var(--color-primary-dark);
+    color: var(--color-bg-dark);
+    
+    &:hover {
+      background-color: var(--color-secondary-dark);
+      color: var(--color-bg-dark);
+    }
+  }
+  
+  .post-card:not(.post-card--featured) .post-card__read-more {
+    background: linear-gradient(45deg, var(--color-primary-dark), var(--color-secondary-dark));
+    color: var(--color-bg-dark);
+    
+    &:hover {
+      background: linear-gradient(45deg, var(--color-secondary-dark), var(--color-primary-dark));
+    }
+  }
+}

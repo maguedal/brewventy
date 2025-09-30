@@ -1,0 +1,14 @@
+{
+  "emmet.includeLanguages": {
+    "njk": "html"
+  },
+  "files.associations": {
+    "*.njk": "html"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "[scss]": {
+    "editor.suggest.insertMode": "replace"
+  }
+}

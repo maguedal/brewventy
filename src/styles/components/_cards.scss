@@ -1,0 +1,605 @@
+/* Enhanced Post Cards with Optimized Spacing */
+
+/* ====================================
+   POST GRID SYSTEM - FIXED SPACING
+   ==================================== */
+
+.post-grid {
+  display: grid;
+  gap: var(--spacing-base);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+
+  /* Mobile: Single column, tight spacing */
+  grid-template-columns: 1fr;
+
+  /* Small tablets: 2 columns, better spacing */
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  /* Large tablets: Better spacing */
+  @media (min-width: 768px) {
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  /* Desktop: 3 columns, optimized spacing */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  /* Large desktop: Better spacing */
+  @media (min-width: 1280px) {
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+  }
+
+  /* Extra large: 4 columns for very wide screens */
+  @media (min-width: 1536px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ====================================
+   POST CARD - MERGED & OPTIMIZED
+   ==================================== */
+
+.post-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  /* OPTIMIZED RESPONSIVE PADDING - Much less excessive */
+  padding: var(--spacing-base);
+
+  /* Small tablets: Slightly more padding */
+  @media (min-width: 640px) {
+    padding: var(--spacing-lg);
+  }
+
+  /* Large tablets: Comfortable but not excessive */
+  @media (min-width: 768px) {
+    padding: var(--spacing-lg);
+    /* Was xl, now lg for better density */
+  }
+
+  /* Desktop: Keep reasonable padding */
+  @media (min-width: 1024px) {
+    padding: var(--spacing-base);
+    /* Tighter on desktop with 3 columns */
+  }
+
+  @media (min-width: 1280px) {
+    padding: var(--spacing-lg);
+    /* Slightly more room on large screens */
+  }
+
+  /* Enhanced hover effect - keeping the better one from main.scss */
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px var(--color-shadow);
+    border-color: var(--color-primary);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Card header with optimized spacing */
+  &__header {
+    margin-bottom: var(--spacing-sm);
+    /* Reduced from base for tighter layout */
+    flex-shrink: 0;
+
+    @media (min-width: 640px) {
+      margin-bottom: var(--spacing-base);
+    }
+  }
+
+  /* Card title - keeping responsive sizing */
+  &__title {
+    margin: 0 0 var(--spacing-xs) 0;
+    /* Tighter bottom margin */
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-semibold);
+
+    /* Responsive font sizing for better density */
+    font-size: var(--font-size-base);
+
+    @media (min-width: 640px) {
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    @media (min-width: 768px) {
+      font-size: var(--font-size-xl);
+    }
+
+    @media (min-width: 1024px) {
+      font-size: var(--font-size-lg);
+      /* Scale back down for 3-column layout */
+    }
+
+    @media (min-width: 1280px) {
+      font-size: var(--font-size-xl);
+    }
+
+    a {
+      color: var(--color-text);
+      text-decoration: none;
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--color-primary);
+      }
+
+      /* Full card clickable area */
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  /* Card date - keeping from main.scss structure */
+  &__date {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    margin: 0;
+
+    /* Responsive font sizing */
+    font-size: var(--font-size-xs);
+
+    @media (min-width: 640px) {
+      font-size: var(--font-size-sm);
+    }
+  }
+
+  /* Card body - keeping from main.scss with better spacing */
+  &__body {
+    flex: 1;
+    margin-bottom: var(--spacing-sm);
+    /* Reduced spacing */
+
+    @media (min-width: 640px) {
+      margin-bottom: var(--spacing-base);
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: var(--spacing-sm);
+      /* Tighter for 3-column */
+    }
+
+    @media (min-width: 1280px) {
+      margin-bottom: var(--spacing-base);
+    }
+  }
+
+  /* Card excerpt with smart truncation */
+  &__excerpt {
+    margin-bottom: 0;
+    color: var(--color-text-alt);
+    line-height: var(--line-height-relaxed);
+
+    /* Smart text truncation for better density */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    /* Responsive font size and line clamping */
+    font-size: var(--font-size-sm);
+    -webkit-line-clamp: 2;
+
+    @media (min-width: 640px) {
+      font-size: var(--font-size-base);
+      -webkit-line-clamp: 3;
+    }
+
+    @media (min-width: 768px) {
+      -webkit-line-clamp: 4;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: var(--font-size-sm);
+      /* Smaller text for 3-column density */
+      -webkit-line-clamp: 3;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: var(--font-size-base);
+      -webkit-line-clamp: 4;
+    }
+  }
+
+  /* Card footer - keeping from main.scss with better spacing */
+  &__footer {
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    /* Reduced from lg */
+    border-top: 1px solid var(--color-border);
+    flex-shrink: 0;
+
+    @media (min-width: 640px) {
+      padding-top: var(--spacing-base);
+    }
+
+    @media (min-width: 768px) {
+      padding-top: var(--spacing-lg);
+    }
+
+    @media (min-width: 1024px) {
+      padding-top: var(--spacing-sm);
+      /* Tighter for 3-column */
+    }
+
+    @media (min-width: 1280px) {
+      padding-top: var(--spacing-base);
+    }
+  }
+
+  /* Card meta - enhanced from both versions */
+  &__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    /* Tighter gap */
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+
+    @media (min-width: 640px) {
+      gap: var(--spacing-sm);
+    }
+
+    /* Keep mobile stacking from main.scss */
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+      /* Reduced from base */
+    }
+  }
+}
+
+/* ====================================
+   CARD VARIANTS
+   ==================================== */
+
+/* Featured post cards */
+.post-card--featured {
+  grid-column: span 1;
+
+  @media (min-width: 640px) {
+    grid-column: span 2;
+    padding: var(--spacing-lg);
+
+    .post-card__title {
+      font-size: var(--font-size-xl);
+    }
+
+    .post-card__excerpt {
+      -webkit-line-clamp: 4;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-xl);
+
+    .post-card__title {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: span 3;
+
+    .post-card__body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    grid-column: span 2;
+
+    .post-card__body {
+      display: block;
+    }
+  }
+}
+
+/* Compact card variant for dense layouts */
+.post-card--compact {
+  padding: var(--spacing-sm);
+
+  @media (min-width: 640px) {
+    padding: var(--spacing-base);
+  }
+
+  .post-card__header {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .post-card__title {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+
+    @media (min-width: 640px) {
+      font-size: var(--font-size-base);
+    }
+  }
+
+  .post-card__body {
+    margin-bottom: var(--spacing-xs);
+
+    @media (min-width: 640px) {
+      margin-bottom: var(--spacing-sm);
+    }
+  }
+
+  .post-card__excerpt {
+    font-size: var(--font-size-xs);
+    -webkit-line-clamp: 2;
+
+    @media (min-width: 640px) {
+      font-size: var(--font-size-sm);
+    }
+  }
+
+  .post-card__footer {
+    padding-top: var(--spacing-xs);
+
+    @media (min-width: 640px) {
+      padding-top: var(--spacing-sm);
+    }
+  }
+}
+
+/* ====================================
+   TAG SYSTEM FOR POST CARDS
+   ==================================== */
+
+.post-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: 640px) {
+    gap: var(--spacing-sm);
+  }
+}
+
+.post-card__tag {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition);
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  /* Above the card link overlay */
+
+  /* Responsive tag sizing */
+  font-size: var(--font-size-xs);
+  padding: calc(var(--spacing-xs) / 2) var(--spacing-xs);
+
+  @media (min-width: 640px) {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  /* Hide excess tags based on screen size for better density */
+  &:nth-child(n+3) {
+    @media (max-width: 639px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(n+4) {
+    @media (min-width: 640px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(n+5) {
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-1px);
+  }
+}
+
+.post-card__read-more {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  /* Above the card link overlay */
+
+  font-size: var(--font-size-xs);
+
+  @media (min-width: 640px) {
+    font-size: var(--font-size-sm);
+  }
+
+  &:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+}
+
+/* ====================================
+   BLOG SECTION STYLING
+   ==================================== */
+
+.blog-section {
+  padding: var(--spacing-xl) 0;
+
+  @media (min-width: 640px) {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  @media (min-width: 1280px) {
+    padding: var(--spacing-4xl) 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+
+    @media (min-width: 640px) {
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: var(--spacing-3xl);
+    }
+
+    .section-title {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin: 0 0 var(--spacing-sm) 0;
+
+      font-size: var(--font-size-xl);
+
+      @media (min-width: 640px) {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-base);
+      }
+
+      @media (min-width: 768px) {
+        font-size: var(--font-size-3xl);
+      }
+
+      @media (min-width: 1024px) {
+        font-size: var(--font-size-4xl);
+      }
+    }
+
+    .section-subtitle {
+      color: var(--color-text-alt);
+      margin: 0;
+      font-weight: var(--font-weight-light);
+
+      font-size: var(--font-size-base);
+
+      @media (min-width: 640px) {
+        font-size: var(--font-size-lg);
+      }
+    }
+  }
+}
+
+/* ====================================
+   LOAD MORE FUNCTIONALITY
+   ==================================== */
+
+.load-more {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+
+  @media (min-width: 640px) {
+    margin-top: var(--spacing-2xl);
+  }
+
+  @media (min-width: 768px) {
+    margin-top: var(--spacing-3xl);
+  }
+
+  .btn--load-more {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-bg);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition);
+    cursor: pointer;
+
+    /* Responsive button sizing */
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+
+    @media (min-width: 640px) {
+      padding: var(--spacing-base) var(--spacing-xl);
+      font-size: var(--font-size-base);
+    }
+
+    @media (min-width: 768px) {
+      padding: var(--spacing-lg) var(--spacing-2xl);
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ====================================
+   EMPTY STATE
+   ==================================== */
+
+.post-grid--empty {
+  text-align: center;
+  padding: var(--spacing-4xl) var(--spacing-xl);
+  color: var(--color-text-muted);
+
+  .empty-icon {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.5;
+  }
+
+  .empty-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-base);
+    color: var(--color-text);
+  }
+
+  .empty-description {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+  }
+}

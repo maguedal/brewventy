@@ -1,0 +1,87 @@
+---
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+permalink: /tags/{{ tag | slugify }}/
+eleventyComputed:
+  title: "Coffee Stories tagged '{{ tag }}'"
+  description: "All coffee stories and posts tagged with {{ tag }} - find your perfect brew of content"
+layout: layouts/page.njk
+---
+
+<h2> ☕ {{ tag | title }} Coffee Stories
+
+<p class="lead">Brewing up all our stories tagged with <strong>{{ tag }}</strong>. Grab your favorite cup and dive in!</p>
+
+{% set taggedPosts = collections.posts | filterByTag(tag) %}
+
+{% if taggedPosts.length > 0 %}
+<!-- UPDATED: Using new post-grid with optimized spacing -->
+<div class="post-grid">
+  {% for post in taggedPosts %}
+  <article class="post-card">
+    <header class="post-card__header">
+      <h3 class="post-card__title">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <time class="post-card__date" datetime="{{ post.date | dateISO }}">
+        {{ post.date | dateDisplay }}
+      </time>
+    </header>
+    
+    <div class="post-card__body">
+      {% if post.data.description %}
+        <p class="post-card__excerpt">{{ post.data.description }}</p>
+      {% else %}
+        <p class="post-card__excerpt">{{ post.content | truncate(150) }}</p>
+      {% endif %}
+    </div>
+    
+    <footer class="post-card__footer">
+      <div class="post-card__meta">
+        {% if post.data.tags and post.data.tags.length > 0 %}
+          <ul class="post-card__tags">
+            {% for postTag in post.data.tags | head(4) %}
+              {% if postTag != 'post' and postTag != 'posts' and postTag != 'all' %}
+                <li><a href="/tags/{{ postTag | slugify }}/" class="post-card__tag{% if postTag == tag %} post-card__tag--active{% endif %}">{{ postTag }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <a href="{{ post.url }}" class="post-card__read-more">Read More</a>
+      </div>
+    </footer>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<!-- Empty state with better styling -->
+<div class="post-grid--empty">
+  <div class="empty-icon">☕</div>
+  <h3 class="empty-title">No Coffee Stories Found</h3>
+  <p class="empty-description">
+    We haven't brewed any stories about <strong>{{ tag }}</strong> yet. 
+    Check back soon for fresh content, or explore other coffee topics!
+  </p>
+  <div class="mt-lg">
+    <a href="/blog/" class="btn btn--primary">☕ Explore All Coffee Stories</a>
+  </div>
+</div>
+{% endif %}
+
+<h3>🏷️ All Coffee Topics</h3>
+
+<div class="tags-cloud mt-xl">
+  {% for topicTag in collections.tagList %}
+    <a href="/tags/{{ topicTag | slugify }}/" class="tag-cloud-item{% if topicTag == tag %} tag-cloud-item--active{% endif %}">
+      {{ topicTag }}
+      <span class="tag-count">{{ collections.posts | filterByTag(topicTag) | length }}</span>
+    </a>
+  {% endfor %}
+</div>
+
+<div class="btn-group btn-group--center mt-xl">
+  <a href="/blog/" class="btn btn--secondary">← All Coffee Stories</a>
+</div>

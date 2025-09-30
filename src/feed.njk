@@ -1,0 +1,33 @@
+---
+permalink: "/feed.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title }} - Coffee Stories</title>
+    <description>{{ site.description }}</description>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    {% if collections.posts.length > 0 %}
+    <lastBuildDate>{{ collections.posts[0].date | dateISO }}</lastBuildDate>
+    {% endif %}
+    
+    {% for post in collections.posts.slice(0, 10) %}
+    <item>
+      <title>{{ post.data.title | xmlEscape }}</title>
+      <description><![CDATA[{% if post.data.description %}{{ post.data.description }}{% else %}{{ post.templateContent | truncate(300) }}{% endif %}]]></description>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid>{{ site.url }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | dateISO }}</pubDate>
+      {% if post.data.tags %}
+      {% for tag in post.data.tags %}
+        {% if tag != 'post' and tag != 'posts' %}
+      <category>{{ tag }}</category>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

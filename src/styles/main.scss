@@ -1,0 +1,279 @@
+// Brewventy Enhanced Coffee Shop Styles
+// The perfect brew of design and functionality ☕
+
+// Import Inter font for enhanced typography
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+// Core theme system
+@import "themes/coffee-themes";
+
+// Reset and foundation
+@import "components/reset";
+
+// Enhanced typography system
+@import "components/typography";
+
+// Enhanced responsive layout system
+@import "components/layout";
+
+// Navigation components
+@import "components/navigation";
+
+// Interactive elements
+@import "components/buttons";
+
+// Content components
+@import "components/cards";
+
+// Form elements
+@import "components/forms";
+
+// Code syntax highlighting
+@import "components/syntax";
+
+// Utility classes
+@import "components/utilities";
+
+// Tag cloud styles
+@import "components/tag-cloud-styles";
+
+@import "components/featured-post-styles";
+
+@import "components/blog-card-fixes";
+
+@import "components/mobile-navigation.scss";
+
+/* Enhanced Coffee Shop Components */
+
+// Enhanced tags with active state
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    align-items: center;
+    margin-top: var(--spacing-base);
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+
+    &:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px var(--color-shadow);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &--ghost {
+        background-color: var(--color-surface);
+        color: var(--color-text);
+        border: 1px solid var(--color-border);
+
+        &:hover {
+            background-color: var(--color-surface-alt);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            filter: none;
+        }
+    }
+
+    &--active {
+        background-color: var(--color-secondary);
+        color: var(--color-bg);
+        box-shadow: 0 2px 8px var(--color-shadow);
+
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
+}
+
+// Enhanced button groups with better spacing
+.btn-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+
+    @media (min-width: 768px) {
+        gap: var(--spacing-base);
+    }
+
+    &--center {
+        justify-content: center;
+    }
+
+    &--mobile-stack {
+        @media (max-width: 640px) {
+            flex-direction: column;
+            width: 100%;
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+// Enhanced theme toggle
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-surface);
+    color: var(--color-text-alt);
+    transition: var(--transition);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-surface-alt);
+        color: var(--color-primary);
+        transform: translateY(-1px);
+        border-color: var(--color-primary);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    .theme-icon {
+        width: 20px;
+        height: 20px;
+        transition: var(--transition);
+    }
+
+    .theme-icon--light {
+        display: block;
+    }
+
+    .theme-icon--dark {
+        display: none;
+    }
+}
+
+// Theme-specific icon display
+[data-theme="latte"] .theme-toggle {
+    .theme-icon--light {
+        display: none;
+    }
+
+    .theme-icon--dark {
+        display: block;
+    }
+}
+
+// Breadcrumbs component
+.breadcrumbs {
+    margin-bottom: var(--spacing-lg);
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--spacing-sm);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: var(--font-size-sm);
+        color: var(--color-text-muted);
+    }
+
+    &__item {
+        &:not(:last-child)::after {
+            content: '/';
+            margin-left: var(--spacing-sm);
+            color: var(--color-text-muted);
+        }
+    }
+
+    &__link {
+        color: var(--color-primary);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: var(--color-secondary);
+        }
+    }
+}
+
+// Enhanced coffee shop welcome message
+.hero {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+
+    @media (min-width: 768px) {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    &__title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-base);
+
+        @media (min-width: 768px) {
+            font-size: var(--font-size-4xl);
+        }
+    }
+
+    &__subtitle {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-alt);
+        margin-bottom: var(--spacing-xl);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (min-width: 768px) {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+    }
+}
+
+/* Coffee shop performance optimizations */
+* {
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
+}
+
+// Smooth transitions for theme switching
+*,
+*::before,
+*::after {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+// Reduced motion preferences
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

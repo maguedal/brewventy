@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="container container-sm">
+  <article class="prose">
+    <header class="mb-xl">
+      <h1 class="mb">{{ title }}</h1>
+
+      <div class="card__meta mb-lg">
+        <time datetime="{{ date | dateISO }}">
+          ☕ Brewed on {{ date | dateDisplay }}
+        </time>
+
+        {% if tags and tags.length > 0 %}
+        <div class="tags">
+          {% for tag in tags %}
+            {% if tag != 'post' and tag != 'posts' %}
+            <a href="/tags/{{ tag | slugify }}/" class="tag tag--ghost">{{ tag }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
+  </article>
+</div>

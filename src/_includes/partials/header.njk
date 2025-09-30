@@ -1,0 +1,36 @@
+<header class="coffee-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        ☕ {{ site.title }}
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <a href="/" class="nav__link{% if page.url == '/' %} is-current{% endif %}">
+          Home
+        </a>
+        <a href="/blog/" class="nav__link{% if page.url.startsWith('/blog/') or page.url.startsWith('/posts/') %} is-current{% endif %}">
+          Coffee Stories
+        </a>
+        <a href="/about/" class="nav__link{% if page.url == '/about/' %} is-current{% endif %}">
+          About Our Brew
+        </a>
+        <a href="/contact/" class="nav__link{% if page.url == '/contact/' %} is-current{% endif %}">
+          Contact
+        </a>
+      </div>
+
+      <div class="nav__actions">
+        {% coffeeToggle %}
+
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
