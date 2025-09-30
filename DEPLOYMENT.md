@@ -29,7 +29,7 @@ This document covers how to deploy Brewventy to various platforms.
    ```
 3. Run `npm run deploy`.
 4. In GitHub settings, enable GitHub Pages from `gh-pages` branch.
-5. Deploy using Github Workflows (see `.github/workflows/github_workflow_gh-pages.yml`).
+5. Deploy using Github Workflows (see example `[github_workflow_gh-pages.yml](github_workflow_gh-pages.yml)`).
 
 ## Custom Server / Other Platforms
 
